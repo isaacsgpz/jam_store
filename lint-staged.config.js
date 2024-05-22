@@ -11,7 +11,7 @@
 //   });
 // };
 
-module.exports = {
+export default {
   // "./apps/**/*.{js,jsx,ts,tsx}": (filenames) => {
   //   const scapedFilenames = scapeFileNames(filenames).join(" ");
   //   return [
@@ -27,8 +27,8 @@ module.exports = {
   //     `git add ${scapedFilenames}`,
   //   ];
   // },
-  "**/*.{js,jsx,ts,tsx,json,md,css,html,yaml}": (filenames) => [
+  '**/*.{js,jsx,ts,tsx,json,md,css,html,yaml}': (filenames) => [
     ` pnpm lint:fix `,
-    ` git add ${filenames.join(" ")} `,
+    ` git add ${filenames.join(' ')} `,
   ],
-};
+}
