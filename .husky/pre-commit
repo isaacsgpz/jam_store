@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+. "$(dirname -- "$0")/_/husky.sh"
+. scripts/cmd-divider.sh
+
+cmd_divider
+echo "🚦 Running pre-commit hook..."
+pnpm pre-commit
