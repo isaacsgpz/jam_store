@@ -2,8 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 10rem;
+  }
+
+  .wrapper {
+    @apply mx-auto w-full max-w-7xl p-4;
+  }
+
+  .page {
+    @apply pt-16 min-h-screen flex-1 p-6;
+  }
+}
+
 @layer utilities {
   .debug {
     @apply border-solid border border-red-500 bg-red-200;
   }
+}
+
+.lucide {
+  @apply size-5;
 }
