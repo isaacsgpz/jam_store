@@ -20,7 +20,9 @@ declare module '@tanstack/react-router' {
 export const App = () => {
   return (
     <>
-      <RouterProvider router={router} />
+      {process.env.NODE_ENV === 'development' && (
+        <RouterProvider router={router} />
+      )}
       <TanStackRouterDevtools router={router} position="bottom-right" />
     </>
   )
