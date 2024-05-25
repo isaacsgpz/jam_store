@@ -6,7 +6,7 @@ import { Link } from '@tanstack/react-router'
 
 export const AppHeader = () => {
   return (
-    <div className="fixed inset-x-4 top-0 bg-base-100">
+    <div className="fixed inset-x-4 top-0 z-[9999] bg-base-100">
       <div className="wrapper navbar h-8">
         <div className="navbar-start">
           <div className="dropdown">

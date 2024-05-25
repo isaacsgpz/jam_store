@@ -7,6 +7,9 @@ export const CartDropdown = () => {
   const cart = useCartStore()
 
   const cartTotalPrice = formatCurrency({ value: cart.totalPrice })
+  const hasProducts = cart.productsCount > 0
+
+  const productsLabel = cart.productsCount > 1 ? 'produtos' : 'produto'
 
   return (
     <div className="flex-none">
@@ -25,9 +28,15 @@ export const CartDropdown = () => {
         >
           <div className="card-body">
             <span className="text-lg font-bold">
-              {cart.productsCount} produtos
+              <span>{cart.productsCount} </span>
+              <span>{productsLabel}</span>
             </span>
-            <span className="">{cartTotalPrice}</span>
+
+            {hasProducts ? (
+              <span className="">{cartTotalPrice}</span>
+            ) : (
+              <span>Seu carrinho está vazio</span>
+            )}
 
             <div className="card-actions">
               <Link to="/cart" className="btn btn-primary btn-block">
