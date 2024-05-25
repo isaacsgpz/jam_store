@@ -1,4 +1,6 @@
 import { BenefitsList } from '@/components/benefits-list'
+import { ContactForm } from '@/components/contact-form'
+import { IngredientsTable } from '@/components/ingredients-table'
 import { NutritionalFactsTable } from '@/components/nutritional-facts-table'
 import { Icons } from '@/components/ui/icons'
 import { PRODUCTS } from '@/constants/products'
@@ -67,27 +69,52 @@ const HomePage = () => {
 
         <BenefitsList />
 
-        <div className="collapse collapse-arrow">
-          <input type="checkbox" name="my-accordion-2" />
-          <div className="collapse-title text-xl font-medium">
-            Ver informação nutricional
+        <div>
+          <div className="collapse collapse-arrow">
+            <input type="checkbox" name="details-accordion-1" />
+            <div className="collapse-title text-xl font-medium">
+              Ingredientes
+            </div>
+            <div className="collapse-content overflow-x-auto overflow-y-hidden">
+              <IngredientsTable />
+            </div>
           </div>
-          <div className="collapse-content overflow-x-auto">
-            <NutritionalFactsTable />
+          <div className="collapse collapse-arrow">
+            <input type="checkbox" name="details-accordion-2" />
+            <div className="collapse-title text-xl font-medium">
+              Informação nutricional
+            </div>
+            <div className="collapse-content overflow-x-auto overflow-y-hidden">
+              <NutritionalFactsTable />
+            </div>
           </div>
         </div>
       </section>
 
       <section className="page wrapper">
-        <div className="flex flex-col gap-8 text-center">
-          <h2 id="contato" className="text-3xl font-bold md:text-5xl">
-            Entre em Contato Conosco
-          </h2>
+        <div className="flex flex-col gap-24 text-center">
+          <div className="space-y-8">
+            <h2 id="contato" className="text-3xl font-bold md:text-5xl">
+              Entre em contato conosco
+            </h2>
 
-          <p className="mx-auto max-w-lg text-lg">
-            Fale conosco para mais informações sobre nossa sobremesa ou para
-            tirar qualquer dúvida que você tenha.
-          </p>
+            <p className="mx-auto max-w-lg text-lg">
+              Fale conosco para mais informações sobre nossa sobremesa ou para
+              tirar qualquer dúvida que você tenha.
+            </p>
+          </div>
+
+          <div className="wrapper grid flex-1 grid-cols-1 items-center gap-6 sm:grid-cols-2">
+            <div className="hidden items-center justify-center sm:flex">
+              <img
+                src="/assets/3d-contact.png"
+                alt="Formulário de contato"
+                className="mt-3 max-h-[40vh] object-contain object-center drop-shadow-2xl 2xl:max-h-[32vh]"
+              />
+            </div>
+
+            <ContactForm />
+          </div>
         </div>
       </section>
     </main>
