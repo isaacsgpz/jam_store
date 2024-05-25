@@ -3,8 +3,8 @@ import { Product } from '@/@types/product'
 export const PRODUCTS: Product[] = [
   {
     id: '1',
-    name: 'Product 1',
-    tags: ['tag1', 'tag2'],
-    price: 100,
+    name: 'Sobremesa de Aveia com Mel e Frutas Vermelhas',
+    tags: ['frutas vermelhas'],
+    price: 26.99,
   },
 ]
