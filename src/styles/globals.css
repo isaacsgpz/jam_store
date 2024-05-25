@@ -5,7 +5,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 10rem;
+    scroll-padding-top: 5rem;
   }
 
   .wrapper {
@@ -13,13 +13,13 @@
   }
 
   .page {
-    @apply pt-16 min-h-screen flex-1 p-6;
+    @apply mt-12 min-h-screen flex-1 p-6;
   }
 }
 
 @layer utilities {
   .debug {
-    @apply border-solid border border-red-500 bg-red-200;
+    @apply border border-solid border-red-500 bg-red-200;
   }
 }
 

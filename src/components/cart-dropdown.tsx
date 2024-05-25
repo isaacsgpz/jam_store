@@ -1,4 +1,5 @@
 import { Icons } from '@/components/ui/icons'
+import { Link } from '@tanstack/react-router'
 
 export const CartDropdown = () => {
   return (
@@ -16,9 +17,12 @@ export const CartDropdown = () => {
         >
           <div className="card-body">
             <span className="text-lg font-bold">8 Items</span>
-            <span className="text-info">Subtotal: $999</span>
+            <span className="">Subtotal: $999</span>
+
             <div className="card-actions">
-              <button className="btn btn-primary btn-block">View cart</button>
+              <Link to="/cart" className="btn btn-primary btn-block">
+                View cart
+              </Link>
             </div>
           </div>
         </div>
