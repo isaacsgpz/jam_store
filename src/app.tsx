@@ -21,9 +21,9 @@ export const App = () => {
   return (
     <>
       {process.env.NODE_ENV === 'development' && (
-        <RouterProvider router={router} />
+        <TanStackRouterDevtools router={router} position="bottom-right" />
       )}
-      <TanStackRouterDevtools router={router} position="bottom-right" />
+      <RouterProvider router={router} />
     </>
   )
 }
