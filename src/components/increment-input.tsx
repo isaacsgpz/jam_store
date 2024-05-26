@@ -1,5 +1,5 @@
+import { Icons } from '@/components/ui/icons'
 import * as React from 'react'
-import { Icons } from './ui/icons'
 
 interface IncrementInputProps extends React.HTMLAttributes<HTMLInputElement> {
   defaultValue?: number

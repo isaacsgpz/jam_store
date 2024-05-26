@@ -8,17 +8,17 @@ const ContactFormSchema = z.object({
   message: z.string().min(2, { message: 'Mensagem inválida' }),
 })
 
-type ContactFormFormData = z.infer<typeof ContactFormSchema>
+type ContactFormValues = z.infer<typeof ContactFormSchema>
 
 export const ContactForm = () => {
-  const form = useForm<ContactFormFormData>({
+  const form = useForm<ContactFormValues>({
     resolver: zodResolver(ContactFormSchema),
   })
   const { errors } = form.formState
 
   console.log(errors)
 
-  const handleSubmit = (values: ContactFormFormData) => {
+  const handleSubmit = (values: ContactFormValues) => {
     console.log(values)
     form.reset()
   }

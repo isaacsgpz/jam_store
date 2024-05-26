@@ -3,7 +3,7 @@ import { PRODUCTS } from '@/constants/products'
 import { useCartStore } from '@/stores/cart-store'
 import { formatCurrency } from '@/utils/currency'
 import { Link } from '@tanstack/react-router'
-import { ProductCard } from './product-card'
+import { ProductCard } from '@/components/product-card'
 
 export const CartDropdown = () => {
   const cart = useCartStore()

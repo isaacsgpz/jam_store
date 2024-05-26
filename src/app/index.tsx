@@ -15,7 +15,7 @@ const HomePage = () => {
   return (
     <main className="flex flex-1 flex-col">
       <section className="page wrapper">
-        <div className="wrapper grid flex-1 grid-cols-1 items-center gap-6 sm:grid-cols-2">
+        <div className="grid flex-1 grid-cols-1 items-center gap-6 sm:grid-cols-2">
           <div className="flex flex-col gap-8">
             <h1 id="inicio" className="text-3xl font-bold md:text-5xl">
               Transforme seu momento doce com benefícios para o corpo e a mente!
@@ -51,7 +51,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="page wrapper gap-24 ">
+      <section className="page wrapper gap-24">
         <div className="flex flex-col gap-8 text-center">
           <h2 id="sobre" className="text-3xl font-bold md:text-5xl">
             Sobre a sobremesa
