@@ -26,3 +26,11 @@
 .lucide {
   @apply size-5;
 }
+
+::-webkit-scrollbar {
+  @apply h-0.5 w-0.5 bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-btn bg-primary;
+}

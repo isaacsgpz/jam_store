@@ -20,6 +20,7 @@ export const ContactForm = () => {
 
   const handleSubmit = (values: ContactFormFormData) => {
     console.log(values)
+    form.reset()
   }
 
   return (

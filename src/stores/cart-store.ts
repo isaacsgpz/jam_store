@@ -7,6 +7,8 @@ export interface CartStore {
   totalPrice: number
   productsCount: number
   add: (product: CartProduct) => void
+  remove: (productId: string) => void
+  update: (productId: string, amount: number) => void
   clear: () => void
 }
 
@@ -28,6 +30,40 @@ export const useCartStore = create<CartStore>()(
                   : p,
               )
             : [...products, { ...product }]
+
+          return {
+            products: updatedProducts,
+            totalPrice: updatedProducts.reduce(
+              (acc, p) => acc + p.price * p.amount,
+              0,
+            ),
+            productsCount: updatedProducts.length,
+          }
+        })
+      },
+      remove: (productId) => {
+        set((state) => {
+          const { products } = state
+
+          const updatedProducts = products.filter((p) => p.id !== productId)
+
+          return {
+            products: updatedProducts,
+            totalPrice: updatedProducts.reduce(
+              (acc, p) => acc + p.price * p.amount,
+              0,
+            ),
+            productsCount: updatedProducts.length,
+          }
+        })
+      },
+      update: (productId, amount) => {
+        set((state) => {
+          const { products } = state
+
+          const updatedProducts = products.map((p) =>
+            p.id === productId ? { ...p, amount } : p,
+          )
 
           return {
             products: updatedProducts,
