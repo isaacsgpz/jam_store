@@ -1,7 +1,8 @@
-import { CheckoutForm } from '@/components/checkout-form'
+import { CheckoutForm, CheckoutFormValues } from '@/components/checkout-form'
 import { ProductCard } from '@/components/product-card'
 import { Icons } from '@/components/ui/icons'
 import { useCartStore } from '@/stores/cart-store'
+import { formatCurrency } from '@/utils/currency'
 import { createFileRoute } from '@tanstack/react-router'
 import * as React from 'react'
 
@@ -9,7 +10,19 @@ const CartPage = () => {
   const cart = useCartStore()
   const checkoutFormId = React.useId()
 
+  const formattedTotalPrice = formatCurrency({ value: cart.totalPrice })
   const hasProducts = cart.productsCount > 0
+
+  const handleFormSubmit = (values: CheckoutFormValues) => {
+    const order = {
+      products: cart.products,
+      totalPrice: cart.totalPrice,
+      address: values,
+    }
+
+    console.log(order)
+    cart.clear()
+  }
 
   return (
     <section className="wrapper page flex-1 flex-col gap-16">
@@ -18,6 +31,7 @@ const CartPage = () => {
       <div className="grid flex-1 grid-cols-1 items-center gap-y-4 sm:grid-cols-2">
         <CheckoutForm
           formId={checkoutFormId}
+          onSubmit={handleFormSubmit}
           className="order-last md:-order-1"
         />
 
@@ -52,11 +66,11 @@ const CartPage = () => {
           <div className="mx-4 ">
             <div className="flex items-center justify-between">
               <strong className="text-lg font-bold">Total</strong>
-              <span className="text-lg font-bold">{cart.totalPrice}</span>
+              <span className="text-lg font-bold">{formattedTotalPrice}</span>
             </div>
           </div>
           <button className="btn btn-primary mt-4 w-full" form={checkoutFormId}>
-            Finalizar Compra
+            Finalizar pedido
           </button>
         </div>
       </div>

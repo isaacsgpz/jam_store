@@ -13,11 +13,12 @@ const CheckoutFormSchema = z.object({
   zip: z.string().min(8, { message: 'CEP inválido' }),
 })
 
-type CheckoutFormValues = z.infer<typeof CheckoutFormSchema>
+export type CheckoutFormValues = z.infer<typeof CheckoutFormSchema>
 
 interface CheckoutFormProps {
   formId: string
   className?: string
+  onSubmit: (values: CheckoutFormValues) => void
 }
 
 export const CheckoutForm = (props: CheckoutFormProps) => {
@@ -27,7 +28,7 @@ export const CheckoutForm = (props: CheckoutFormProps) => {
   const { errors } = form.formState
 
   const handleSubmit = (values: CheckoutFormValues) => {
-    console.log(values)
+    props.onSubmit(values)
     form.reset()
   }
 
