@@ -5,16 +5,12 @@ import { NutritionalFactsTable } from '@/components/nutritional-facts-table'
 import { Icons } from '@/components/ui/icons'
 import { PRODUCTS } from '@/constants/products'
 import { useCartStore } from '@/stores/cart-store'
-import { createFileRoute, useNavigate } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 
 const HomePage = () => {
   const cart = useCartStore()
-  const navigate = useNavigate()
 
-  const handleAddToCart = () => {
-    cart.add({ ...PRODUCTS[0], amount: 1 })
-    navigate({ to: '/cart' })
-  }
+  const handleAddToCart = () => cart.add({ ...PRODUCTS[0], amount: 1 })
 
   return (
     <main className="flex flex-1 flex-col">

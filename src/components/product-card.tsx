@@ -48,7 +48,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             className="btn btn-square btn-xs"
             onClick={handleRemoveProduct}
           >
-            <Icons.X />
+            <Icons.Trash2 className="!size-4" />
           </button>
         </div>
       </article>
